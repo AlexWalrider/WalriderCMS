@@ -1,12 +1,13 @@
 # WalriderCMS
-CMS without MySQL
-
-
-A lot of functions.
-
+CMS without MySQL<br>
 Written in php+html+css+javascript
 
-Functions:
+# Installation
+
+Just upload to the server<br>
+No need to setup smth
+
+# Features:
 
 1. creating pages with any content (video, text, audio etc.):
 - you can upload your logo
@@ -24,7 +25,7 @@ Functions:
 7. Javascript keycode detector (took source from github a long time ago. not my one. If you know who wrote that code, send me message, I'll add link to the real author)
 8. Start page with a glitch (took source from github a long time ago. not my one. If you know who wrote that code, send me message, I'll add link to the real author)
 
-ADMIN PANEL:
+# ADMIN PANEL:
 
 - you can view and delete shortened links
 - you can view and delete created pages
@@ -35,3 +36,7 @@ ADMIN PANEL:
 - you can change username and password
 - you can change admin name and pasword
 - you can change status (displaying on all the pages)
+
+# Contact
+E-mail: alex@walrider.ru<br>
+This project is a personal development, please respect its philosophy and don't use it for evil purposes!
