@@ -23,3 +23,15 @@ Functions:
 6. Editable notes (you can save your note and modify it by key)
 7. Javascript keycode detector (took source from github a long time ago. not my one. If you know who wrote that code, send me message, I'll add link to the real author)
 8. Start page with a glitch (took source from github a long time ago. not my one. If you know who wrote that code, send me message, I'll add link to the real author)
+
+ADMIN PANEL:
+
+- you can view and delete shortened links
+- you can view and delete created pages
+- you can view and delete uploaded images
+- you can view and delete uploaded video
+- you can view and delete log of views (include date, time, link and IP. All of it separated by 3 categories under spoiler)
+- you can view and delete archieved log of views (include date, time, link and IP. All of it separated by 3 categories under spoiler)
+- you can change username and password
+- you can change admin name and pasword
+- you can change status (displaying on all the pages)
