@@ -1,0 +1,488 @@
+body
+{
+	
+	color: #555555;
+	font: normal 10pt tahoma, verdana, geneva, lucida, 'lucida grande', arial, helvetica, sans-serif;
+	margin: 0;
+	padding: 0;
+}
+a:link, body_alink
+{
+	color: #202021;
+	text-decoration: underline;
+}
+a:visited, body_avisited
+{
+	color: #202021;
+	text-decoration: underline;
+}
+a:hover, a:active, body_ahover
+{
+	color: #005594;
+	text-decoration: underline;
+}
+.page
+{
+	background: #FFFFFF;
+}
+td, th, p, li
+{
+	font-size: 10pt;
+}
+.tborder
+{
+	background: #B1B1B1;
+}
+.tcat
+{
+	background: #242424 url(../../images/Infusion/gradients/gradient_tcat.gif) repeat-x top left;
+	color: #FFFFFF;
+	font-size: 11px;
+	font-weight: bold;
+	line-height: 29px;
+	padding: 0 0 0 12px;
+}
+.tcat a:link, .tcat_alink
+{
+	color: #FFFFFF;
+	text-decoration: none;
+}
+.tcat a:visited, .tcat_avisited
+{
+	color: #FFFFFF;
+	text-decoration: none;
+}
+.tcat a:hover, .tcat a:active, .tcat_ahover
+{
+	color: #FFFFFF;
+	text-decoration: underline;
+}
+.thead
+{
+	background: #FFFFFF url(../../images/Infusion/gradients/gradient_thead.gif) repeat-x top left;
+	color: #919191;
+	font-size: 10px;
+	font-weight: normal;
+	font-style: normal;
+	font-variant: normal;
+	white-space: nowrap;
+	padding: 3px 4px;
+}
+.thead a:link, .thead_alink
+{
+	color: #919191;
+	text-decoration: underline;
+}
+.thead a:visited, .thead_avisited
+{
+	color: #919191;
+	text-decoration: underline;
+}
+.thead a:hover, .thead a:active, .thead_ahover
+{
+	color: #919191;
+	text-decoration: none;
+}
+.tfoot
+{
+	background: #F0F0F0;
+	color: #929292;
+}
+.tfoot a:link, .tfoot_alink
+{
+	color: #929292;
+	text-decoration: none;
+}
+.tfoot a:visited, .tfoot_avisited
+{
+	color: #929292;
+	text-decoration: none;
+}
+.tfoot a:hover, .tfoot a:active, .tfoot_ahover
+{
+	color: #868686;
+	text-decoration: underline;
+}
+.alt1, .alt1Active
+{
+	background: #F1F1F1;
+	color: #000000;
+	border: 2px solid #FFFFFF;
+}
+.alt2, .alt2Active
+{
+	background: #F6F6F6;
+	color: #000000;
+	border: 2px solid #FFFFFF;
+}
+.inlinemod
+{
+	background: #FFFFCC;
+	color: #000000;
+}
+.wysiwyg
+{
+	background: #F5F5FF;
+	color: #000000;
+	font-size: 10pt;
+}
+textarea, .bginput
+{
+	font-size: 10pt;
+}
+.bginput option, .bginput optgroup
+{
+	font-size: 10pt;
+}
+.button
+{
+	font-size: 11px;
+}
+select
+{
+	font-size: 11px;
+}
+option, optgroup
+{
+	font-size: 11px;
+}
+.smallfont
+{
+	font-size: 11px;
+}
+.time
+{
+	color: #333333;
+}
+.navbar
+{
+	font-size: 11px;
+}
+.highlight
+{
+	color: #FF2020;
+	font-weight: bold;
+}
+.fjsel
+{
+	background: #3E5C92;
+	color: #E0E0F6;
+}
+.fjdpth0
+{
+	background: #F7F7F7;
+	color: #000000;
+}
+.panel
+{
+	background: #F1F1F1;
+	color: #000000;
+	padding: 10px;
+	border: 2px outset;
+}
+.panelsurround
+{
+	background: #F6F6F6;
+	color: #000000;
+}
+legend
+{
+	color: #22229C;
+	font-size: 11px;
+}
+.vbmenu_control
+{
+	background: #242424 url(../../images/Infusion/gradients/gradient_tcat.gif) repeat-x top right;
+	color: #FFFFFF;
+	font-size: 11px;
+	font-weight: bold;
+	padding: 3px 6px 3px 6px;
+	white-space: nowrap;
+}
+.vbmenu_control a:link, .vbmenu_control_alink
+{
+	color: #FFFFFF;
+	text-decoration: none;
+}
+.vbmenu_control a:visited, .vbmenu_control_avisited
+{
+	color: #FFFFFF;
+	text-decoration: none;
+}
+.vbmenu_control a:hover, .vbmenu_control a:active, .vbmenu_control_ahover
+{
+	color: #FFFFFF;
+	text-decoration: underline;
+}
+.vbmenu_popup
+{
+	background: #FFFFFF;
+	color: #000000;
+	border: 1px solid #000000;
+}
+.vbmenu_option
+{
+	background: #DFDFDF;
+	color: #000000;
+	font-size: 11px;
+	white-space: nowrap;
+	cursor: pointer;
+}
+.vbmenu_option a:link, .vbmenu_option_alink
+{
+	color: #000000;
+	text-decoration: none;
+}
+.vbmenu_option a:visited, .vbmenu_option_avisited
+{
+	color: #000000;
+	text-decoration: none;
+}
+.vbmenu_option a:hover, .vbmenu_option a:active, .vbmenu_option_ahover
+{
+	color: #FFFFFF;
+	text-decoration: none;
+}
+.vbmenu_hilite
+{
+	background: #8A8A8A;
+	color: #FFFFFF;
+	font-size: 11px;
+	white-space: nowrap;
+	cursor: pointer;
+}
+.vbmenu_hilite a:link, .vbmenu_hilite_alink
+{
+	color: #FFFFFF;
+	text-decoration: none;
+}
+.vbmenu_hilite a:visited, .vbmenu_hilite_avisited
+{
+	color: #FFFFFF;
+	text-decoration: none;
+}
+.vbmenu_hilite a:hover, .vbmenu_hilite a:active, .vbmenu_hilite_ahover
+{
+	color: #FFFFFF;
+	text-decoration: none;
+}
+/* ***** styling for 'big' usernames on postbit etc. ***** */
+.bigusername { font-size: 14pt; }
+
+/* ***** basic styles for multi-page nav elements */
+.pagenav a { text-decoration: none; }
+.pagenav td { padding: 2px 4px 2px 4px; }
+
+/* ***** define margin and font-size for elements inside panels ***** */
+.fieldset { margin-bottom: 6px; }
+.fieldset, .fieldset td, .fieldset p, .fieldset li { font-size: 11px; }
+
+/* ***** don't change the following ***** */
+form { display: inline; }
+label { cursor: default; }
+.normal { font-weight: normal; }
+.inlineimg { vertical-align: middle; }
+.search-text {
+  margin: 2px 0 0 0;
+  font-size: 10px;
+}
+
+html > body .search-text {
+  margin: 2px 0 0 0;
+}
+
+.navigation, .navigation_seperator {
+  font: bold 11px tahoma, verdana, geneva, lucida, 'lucida grande', arial, helvetica, sans-serif;
+}
+
+.navigation_seperator {
+  background: url(../../images/Infusion/navigation/seperator.gif) no-repeat top left;
+}
+
+.navigation_white {
+  background: #DDDDDD url(../../images/Infusion/navigation/white.gif) repeat-x left top;
+  color: #026299;
+  height: 26px;
+  font-weight: bold;
+}
+
+.navigation_white a:link, .navigation_white a:visited {
+  color: #026299;
+  text-decoration: none;
+}
+
+.navigation_white a:hover, .navigation_white a:active {
+  color: #026299;
+  text-decoration: underline;
+}
+
+.navigation_black {
+  background: #DDDDDD url(../../images/Infusion/navigation/black.gif) repeat-x left top;
+  color: #FFFFFF;
+  height: 26px;
+  line-height: 26px;
+  padding: 0 0 0 10px;
+  font: bold 11px tahoma, verdana, geneva, lucida, 'lucida grande', arial, helvetica, sans-serif;
+}
+
+.navigation_black a:link, .navigation_black a:visited {
+  color: #FFFFFF;
+  text-decoration: none;
+}
+
+.navigation_black a:hover, .navigation_black a:active {
+  color: #FFFFFF;
+  text-decoration: underline;
+}
+
+.userinfo {
+  border: 1px solid #B1B1B1;
+  background: #FFFFFF;
+  color: #026299;
+  padding: 4px;
+  margin: 2px 0 0 0;
+}
+
+.bluename {
+  font-size: 10px;
+  font-weight: bold;
+  background: url(../../images/Infusion/gradients/gradient_theader.gif) repeat-x top left;
+  line-height: 18px;
+  color: #026299;
+}
+
+.bluename a:link, .bluename a:visited {
+  color: #026299;
+  text-decoration: none;
+}
+
+.bluename a:hover, .bluename a:active {
+  color: #026299;
+  text-decoration: underline;
+}
+
+.blue {
+  color: #005594;
+}
+
+.blue a:link, .blue a:visited {
+  color: #005594;
+  text-decoration: none;
+}
+
+.blue a:hover, .blue a:active {
+  color: #005594;
+  text-decoration: underline;
+}
+
+.grey {
+  color: #B0B0B0;
+}
+
+.grey a:link, .grey a:visited {
+  color: #B0B0B0;
+  text-decoration: none;
+}
+
+.grey a:hover, .grey a:active {
+  color: #545454;
+  text-decoration: underline;
+}
+
+
+.tfooter {
+  background: #424243 url(../../images/Infusion/gradients/gradient_tfooter.gif) repeat-x top left;
+  font-size: 1px;
+  height: 6px;
+}
+
+img {
+  border: 0;
+  padding: 0;
+  margin: 0;
+  vertical-align: top;
+}
+a.mlink{font-family: Arial, Helvetica, sans-serif; font-size:11px;}
+a.mlink:link {text-decoration: none; color: #FFFFFF; font-weight:normal;}
+a.mlink:active {text-decoration:none; color:#FFFFFF; font-weight:normal;}
+a.mlink:visited {text-decoration:none; color:#FFFFFF;font-weight:normal;}
+a.mlink:hover {text-decoration:none; color: #FF8000; font-weight:normal;}
+
+a.mlink1{font-family: Verdana, Arial, Helvetica, sans-serif; font-size:10px; display:block; float:right; margin: 1px; padding:1px; margin-right: 5px;}
+a.mlink1:link {text-decoration: none; color: #FFFFFF; font-weight:bold;}
+a.mlink1:active {text-decoration:none; color:#FFFFFF; font-weight:bold;}
+a.mlink1:visited {text-decoration:none; color:#FFFFFF;font-weight:bold;}
+a.mlink1:hover {text-decoration:none; color: #FF8000; font-weight:bold;}
+
+a.minilink{ font-family: Verdana, Arial, Helvetica, sans-serif;font-size: 11px; }
+a.minilink:link {text-decoration: underline; color: #000000; font-weight:normal;}
+a.minilink:active {text-decoration:underline; color:#000000; font-weight:normal;}
+a.minilink:visited {text-decoration:underline; color:#000000;font-weight:normal;}
+a.minilink:hover {text-decoration:none; color: #000000; font-weight:normal;}
+
+span.tagcutlink {
+border-bottom: 1px dashed #000000;
+color: #000000;
+cursor: pointer;
+}
+
+input.sbut1 {
+	background-color:#FFFFFF; 
+	font-family: Verdana, Arial, Helvetica, sans-serif; 
+	font-size:11px;
+}
+
+.inlinemod2
+{
+	background: #FAFAFA;
+	color: #000000;
+}
+
+div.pageblock {
+	margin: 0;
+	padding: 0;
+	font-family: "Courier New", Courier, monospace;
+}
+
+span.backlight {
+	font-family: "Courier New", Courier, monospace; font-size:12px;
+	background-color: #B1B1B1;
+	color: #000000;
+}
+
+div.get_overlay {
+    position: fixed;
+    z-index: 0;
+    top: 0;
+    left: 0;
+    height: 100%;
+    width: 100%;
+    background-color: #000;
+    filter: progid:DXImageTransform.Microsoft.Alpha(opacity=35);
+    -moz-opacity: 0.35;
+    -khtml-opacity: 0.35;
+    opacity: 0.35;
+	overflow: auto;
+}
+	
+div.modal_window {
+	width: 862px; 
+	height: 550px;
+	top: 50%;
+	left: 50%;
+	position: fixed;
+	margin-top: -275px; 
+	margin-left: -431px;
+	overflow:hidden;
+	max-width:99%;
+	min-width:100px;
+	min-height:24px;
+}
+
+div.maindatablock_alt {
+	margin:0 auto;
+	padding:0;
+	width:96%;
+	overflow: hidden;
+	background-color: #FFFFFF;
+}

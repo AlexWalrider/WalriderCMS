@@ -1,0 +1,149 @@
+﻿<?PHP include ("include/protect/aainclude.php"); ?>
+ <?PHP include ("include/log/xwrite.php"); ?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.0 Transitional//EN">
+<html>
+<style>
+   body {
+    background: url(index_files/back.jpg);
+   }
+  </style>
+
+<head>
+  <meta http-equiv="content-type" content="text/html; charset=UTF-8;charset=utf-8">
+  <title>Панель Администратора</title>
+  <script language="javascript" src="index_files/scrypt00.js"></script>
+  <script language="javascript" src="index_files/jquery00.js"></script>
+  <script language="javascript" src="index_files/highligh.js"></script>
+  <script language="javascript" src="index_files/social00.js"></script>
+  <link rel="stylesheet" type="text/css" href="index_files/style000.css">
+  <link rel="stylesheet" type="text/css" href="index_files/social00.css">
+  <link rel="icon" type="image/x-icon" href="index_files/favicon0.ico">
+  <link rel="shortcut icon" type="image/x-icon" href="index_files/favicon0.ico">
+<script type="text/javascript">
+    $(document).ready(function(){
+    $('.splLink').click(function(){
+        $(this).parent().children('div.splCont').toggle('normal');
+        return false;
+    });
+});
+</script>
+
+<style type="text/css">
+   .splCont {display:none; padding:5px 15px;  border:2px solid #FF3300;}
+</style>
+</head>
+
+<div class="container">
+
+<div id="content">
+ <?PHP include ("include/page/headwa.txt"); ?><br>
+  <a class="headref" href=""><center><img
+        src="index_files/pst_logo.png"
+        align="absBottom" border="0"></center></a>
+
+
+
+
+<center><h2><?PHP echo (file_get_contents ("include/stat.txt")); ?></h2></center>
+</div><br>
+<div id="content">
+<div align="center"><div align="right"><a href="logout"><button type="button">Logout</button></a></div>
+
+<b><h2>Database:</h2></b>&nbsp;&nbsp; <a href="include/view/showlinks" target="_blank"><button class="clean-gray" type="button">Links</button></a>&nbsp;&nbsp; <a href="include/view/showpages" target="_blank"><button class="clean-gray" type="button">Pages</button></a> &nbsp;&nbsp;<a href="include/view/showimages" target="_blank"><button class="clean-gray" type="button">Images</button></a>&nbsp;&nbsp;<a href="include/view/showimg" target="_blank"><button class="clean-gray" type="button">Images (host)</button></a><br>&nbsp;&nbsp;&nbsp;<a href="include/view/showvid" target="_blank"><button class="clean-gray" type="button">Video (host)</button></a>&nbsp;&nbsp;&nbsp;<a href="include/view/view" target="_blank"><button class="clean-gray" type="button">Views</button></a>&nbsp;&nbsp;<a href="include/view/viewarchive" target="_blank"><button class="clean-gray"type="button">View Archive</button></a><br><br>
+<center><div><a class="splLink" href="">Clear</a>
+ <div class="splCont">
+<center><a href="include/view/archive.php" target="_blank"><button type="button">Clear all views log and move to archive</button></a><br><a href="include/clr/viewclr.php" target="_blank"><button type="button">Clear all views log</button></a><br><a href="include/clr/viewclrpg.php" target="_blank"><button type="button">Clear views log of Pages</button></a><br><a href="include/clr/viewclrimg.php" target="_blank"><button type="button">Clear views log of Images</button></a><br><a href="include/clr/viewclrauth.php" target="_blank"><button type="button">Clear views log of Authorization</button></a></center>
+</div>
+</div>
+</div>
+</div>
+<br>
+
+<form id="record-form" action="include/action/cngentr.php" method="post">
+<div id="content">
+<div align="center">
+<div id="mainBody"><h2>Изменить логин и пароль входа на сайт:</h2>
+Login &nbsp; <input type="text" placeholder="введите логин" name="logino">&nbsp;&nbsp;
+Password &nbsp; <input type="text" placeholder="введите пароль" name="passworda">&nbsp;&nbsp;
+<hr>
+
+<input class="clean-gray" type="submit" value="Изменить" /><!--      <input name="create" value="Создать" class="clean-gray" type="submit">-->
+</div>
+</div>
+</div>
+</form>
+
+<form id="record-form" action="include/action/chngadm.php" method="post">
+<div id="content">
+<div align="center">
+<div id="mainBody"><h2>Изменить логин и пароль админ-панели:</h2>
+Login &nbsp; <input type="text" placeholder="введите логин" name="logina">&nbsp;&nbsp;
+Password &nbsp; <input type="text" placeholder="введите пароль" name="passwordo">&nbsp;&nbsp;
+<hr>
+
+<input class="clean-gray" type="submit" value="Изменить" /><!--      <input name="create" value="Создать" class="clean-gray" type="submit">-->
+</div>
+</div>
+</div>
+</form>
+
+<form id="record-form" action="include/action/stat.php" method="post">
+<div id="content">
+<div align="center">
+<div id="mainBody"><h2>Изменить статус:</h2>
+Статус &nbsp; <input type="text" placeholder="введите статус" name="status">&nbsp;&nbsp;
+
+<hr>
+
+<input class="clean-gray" type="submit" value="Изменить" /><!--      <input name="create" value="Создать" class="clean-gray" type="submit">-->
+</div>
+</div>
+</div>
+</form>
+
+<form id="record-form" action="include/action/deleteimage.php" method="post">
+<div id="content">
+<div align="center">
+<div id="mainBody"><h2>Удалить загруженную картинку:</h2>
+Hosted Image: &nbsp; <input type="text" placeholder="имя картинки" name="imagehost" maxlength="50">&nbsp;&nbsp;
+
+<hr>
+
+<input class="clean-gray" type="submit" value="Удалить" /><!--      <input name="create" value="Создать" class="clean-gray" type="submit">-->
+</div>
+</div>
+</div>
+</form>
+<form id="record-form" action="include/action/deletevid.php" method="post">
+<div id="content">
+<div align="center">
+<div id="mainBody"><h2>Удалить загруженное видео:</h2>
+Hosted VIDEO: &nbsp; <input type="text" placeholder="имя vid" name="vidhost" maxlength="50">&nbsp;&nbsp;
+
+<hr>
+
+<input class="clean-gray" type="submit" value="Удалить" /><!--      <input name="create" value="Создать" class="clean-gray" type="submit">-->
+</div>
+</div>
+</div>
+</form>
+
+<form id="record-form" action="include/action/deletefile.php" method="post">
+<div id="content">
+<div align="center">
+<div id="mainBody"><h2>Удалить файл:</h2>
+Page: &nbsp; <input type="text" placeholder="имя страницы" name="pagehtml" maxlength="30"> &nbsp;&nbsp;
+Image: &nbsp; <input type="text" placeholder="имя картинки" name="imagejpg" maxlength="50">&nbsp;&nbsp;
+<br><br>
+
+<hr>
+
+<input class="clean-gray" type="submit" value="Удалить" /><!--      <input name="create" value="Создать" class="clean-gray" type="submit">-->
+</div>
+</div>
+</div>
+</form>
+<br>
+
+</html>
+

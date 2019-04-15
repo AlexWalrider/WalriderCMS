@@ -1,0 +1,73 @@
+﻿<!DOCTYPE html>
+
+<html>
+<style>
+   body {
+    background: url(../../index_files/back.jpg);
+   }
+  </style>
+ <head>
+ <META HTTP-EQUIV="CACHE-CONTROL" CONTENT="NO-CACHE">
+<META HTTP-EQUIV="EXPIRES" CONTENT="Mon, 22 Jul 2002 11:12:01 GMT">
+  <meta http-equiv="content-type" content="text/html; charset=UTF-8;charset=utf-8">
+  <title>GET THE TRACK INFO</title>
+  <script language="javascript" src="../../index_files/scrypt00.js"></script>
+  <script language="javascript" src="../../index_files/jquery00.js"></script>
+  <script language="javascript" src="../../index_files/highligh.js"></script>
+  <script language="javascript" src="../../index_files/social00.js"></script>
+  <script type="text/javascript">
+	function refresh (timeoutPeriod){ 
+		refresh = setTimeout(function(){window.location.reload(true);},timeoutPeriod); 
+	} 
+</script>
+  <link rel="stylesheet" type="text/css" href="../../index_files/style000.css">
+  <link rel="stylesheet" type="text/css" href="../../index_files/social00.css">
+  <link rel="icon" type="image/x-icon" href="../../index_files/favicon0.ico">
+  <link rel="shortcut icon" type="image/x-icon" href="../../index_files/favicon0.ico">
+  </head>
+<div class="container">
+<div id="content">
+ <?php  include ("../../include/page/headwa.txt"); ?>
+  <a class="headref" href=""><center><img
+        src="../../index_files/pst_logo.png"
+        align="absBottom" border="0"></center></a>
+<br>
+<br>
+<div class="full">
+<center><h1>GET THE TRACK INFO</h1></center>
+<br />
+<center><h2><?php  echo (file_get_contents ("../../include/stat.txt")); ?></h2></center>
+<br />
+</div>
+</div>
+</div>
+<br>
+﻿<div id="content">
+
+<div id="mainBody">
+<br>
+<?php  
+$get = $_GET ['track'];
+$echoz = file_get_contents("https://gdeposylka.ru/form?tracking_form[tracking_number]=$get");
+$ster1 = str_replace ("<div class=\"history hidden-xs hidden-sm\">", "</GRTID>", $echoz);
+$ster2 = str_replace ("<span class=\"td status down hidden-print\">", "<GRTID>", $ster1);
+$ster3 = str_replace ("<a href=", "<a left=", $ster2);
+$tag = "GRTID";
+$entrypoint = "$ster3";
+$resultat = explode("<$tag>", $entrypoint);
+$entrypoint = $resultat[1];
+$resultat = explode("</$tag>", $entrypoint);
+$resultat = $resultat[0];
+///////////////////////
+if ($resultat == "")
+{
+echo ("По вашему трек-номеру производится сбор информации. Если данное сообщение не исчезнет через минуту, значит ваш трек-номер не отслеживается");
+echo ("<script>refresh(10000);</script>");
+}
+else{
+echo $resultat;
+}
+?>
+<hr>
+</div>
+</div>

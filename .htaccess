@@ -1,0 +1,18 @@
+AddHandler fcgid-script .html
+
+RewriteBase /
+RewriteCond %{THE_REQUEST} ^[A-Z]{3,9}\ /([^.]+)\.html\ HTTP
+RewriteRule ^([^.]+)\.html$ http://%{HTTP_HOST}/$1 [R=301,L]
+RewriteRule ^z([-a-zA-Z0-9_]+)/? gserv/image.php?img=$1 [QSA,L]
+RewriteRule ^v([-a-zA-Z0-9_]+)/? gserv/page.php?txt=$1 [QSA,L]
+RewriteRule ^s([-a-zA-Z0-9_]+)/? gserv/url/open.php?link=$1 [QSA,L]
+RewriteRule ^x([-a-zA-Z0-9_]+)/? gserv/notepad/open.html?note=$1 [QSA,L]
+RewriteRule ^k([-a-zA-Z0-9_]+)/? gserv/notes/open.html?note=$1 [QSA,L]
+RewriteRule ^m([-a-zA-Z0-9_]+)/? gserv/ovd.php?vid=$1 [QSA,L]
+RewriteRule ^404 gserv/error.html [QSA,L]
+RewriteCond %{REQUEST_URI} !(\.[^./]+)$
+RewriteCond %{REQUEST_fileNAME} !-d
+RewriteCond %{REQUEST_fileNAME} !-f
+RewriteRule (.*) /$1.html [L]
+
+ErrorDocument 404 https://%{HTTP_HOST}/404

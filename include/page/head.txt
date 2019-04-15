@@ -1,0 +1,2 @@
+﻿<!--<center><a href = "/page">Главная</a>&nbsp;&nbsp;<a href = "/information/contacts">Контакты</a>&nbsp;&nbsp;<a href = "/information/about">Что это за сайт?</a>&nbsp;&nbsp;<a href = "/information/project">О проекте</a></center><br>-->
+<center><a href = "/gserv/url/">Shortener</a>&nbsp;&nbsp;<a href = "/gserv/notepad/notepad">Notepad</a>&nbsp;&nbsp;<a href = "/gserv/notes/notepad">Notes</a>&nbsp;&nbsp;<a href = "/gserv/keys/">KeyCode</a>

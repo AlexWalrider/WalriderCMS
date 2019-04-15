@@ -1,0 +1,67 @@
+﻿<!DOCTYPE html>
+<html>
+<style>
+   body {
+    background: url(../../index_files//back.jpg);
+   }
+  </style>
+ <head>
+  <meta http-equiv="content-type" content="text/html; charset=UTF-8;charset=utf-8">
+  <title>Notepad</title>
+  <script language="javascript" src="../../index_files//scrypt00.js"></script>
+  <script language="javascript" src="../../index_files//jquery00.js"></script>
+  <script language="javascript" src="../../index_files//highligh.js"></script>
+  <script language="javascript" src="../../index_files//social00.js"></script>
+  <link rel="stylesheet" type="text/css" href="../../index_files//style000.css">
+  <link rel="stylesheet" type="text/css" href="../../index_files//social00.css">
+  <link rel="icon" type="image/x-icon" href="../../index_files//favicon0.ico">
+  <link rel="shortcut icon" type="image/x-icon" href="../../index_files//favicon0.ico">
+</head>
+<div class="container">
+<div id="content">
+ <?php  include ("../../include/page/headwa.txt"); ?>
+  <a class="headref" href=""><center><img
+        src="../../index_files//pst_logo.png"
+        align="absBottom" border="0"></center></a>
+<br>
+<br>
+<div class="full">
+<center><h1>Notepad</h1></center><br>
+</div>
+</div>
+</div>
+<br>
+﻿<div id="content">
+
+<div id="mainBody">
+<br>
+
+<?php  
+$gut = $_GET["note"];
+$filename = "notes/$gut.php";
+$host = $_SERVER['HTTP_HOST'];
+if (file_exists($filename))
+{
+$fgt = file_get_contents ("$filename");
+$str = str_replace ('<?php exit(); ?>', "", $fgt);
+echo ("<center><textarea rows=\"10\" cols=\"20\" readonly>$str</textarea></center>"); 
+$ipus = $_SERVER['REMOTE_ADDR'];
+if ($ipus == "185.27.133.4")
+{
+}
+else
+{
+unlink("$filename");
+}
+}
+else
+{
+$aaz = $_SERVER['SERVER_ADDR'];
+//header("Location: http://$host/error");
+echo "<meta http-equiv='refresh' content='0;url=http://$host/error'>";
+//echo ("<center><img src =\"http://$host/index_files/notepad404.jpg\"></center>");
+}
+?>
+<hr>
+</div>
+</div>

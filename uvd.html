@@ -1,0 +1,50 @@
+﻿ <?php  include ("include/protect/uinclude.php"); ?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.0 Transitional//EN">
+<html>
+<style>
+   body {
+    background: url(index_files/back.jpg);
+   }
+  </style>
+ 
+<head>
+  <meta http-equiv="content-type" content="text/html; charset=UTF-8;charset=utf-8">
+  <title><?php  echo ucfirst($_SERVER['HTTP_HOST']);?> - Загрузка видео</title>
+  <script language="javascript" src="index_files/scrypt00.js"></script>
+  <script language="javascript" src="index_files/jquery00.js"></script>
+  <script language="javascript" src="index_files/highligh.js"></script>
+  <script language="javascript" src="index_files/social00.js"></script>
+
+ 
+  <link rel="stylesheet" type="text/css" href="index_files/style000.css">
+  <link rel="stylesheet" type="text/css" href="index_files/social00.css">
+  <link rel="icon" type="image/x-icon" href="index_files/favicon0.ico">
+  <link rel="shortcut icon" type="image/x-icon" href="index_files/favicon0.ico">
+
+</head>
+
+
+<br>
+
+<div class="container">
+
+<div id="content">
+ <?php  include ("include/page/head.txt"); ?><br>
+  <a class="headref" href=""><center><img
+        src="index_files/pst_logo.png"
+        align="absBottom" border="0"></center></a>
+
+
+
+
+<center><h2><?php  echo (file_get_contents ("include/stat.txt")); ?></h2></center>
+<div align = "center"><form name="upload" action="include/upload/uploadvid.php" method="POST" ENCTYPE="multipart/form-data">
+<div style="padding: 5px 0 0 0;">Video: <input type="file" name="userfile"></div><br>
+<input class="clean-gray" style="margin-top: 10px;" type="submit" name="upload" value="Загрузить">
+</form></div>
+</div>
+
+</div>
+</body>
+</html>
+

@@ -1,0 +1,55 @@
+﻿<!DOCTYPE html>
+<html>
+<style>
+   body {
+    background: url(../../index_files/back.jpg);
+   }
+  </style>
+ <head>
+  <meta http-equiv="content-type" content="text/html; charset=UTF-8;charset=utf-8">
+  <title>Notes</title>
+  <script language="javascript" src="../../index_files/scrypt00.js"></script>
+  <script language="javascript" src="../../index_files/jquery00.js"></script>
+  <script language="javascript" src="../../index_files/highligh.js"></script>
+  <script language="javascript" src="../../index_files/social00.js"></script>
+  <link rel="stylesheet" type="text/css" href="../../index_files/style000.css">
+  <link rel="stylesheet" type="text/css" href="../../index_files/social00.css">
+  <link rel="icon" type="image/x-icon" href="../../index_files/favicon0.ico">
+  <link rel="shortcut icon" type="image/x-icon" href="../../index_files/favicon0.ico">
+</head>
+<div class="container">
+<div id="content">
+ <?php  include ("../../include/page/headwa.txt"); ?>
+  <a class="headref" href=""><center><img
+        src="../../index_files/pst_logo.png"
+        align="absBottom" border="0"></center></a>
+<br>
+<br>
+<div class="full">
+<center><h1>Notes</h1></center>
+<br />
+<center><h2><?php  echo (file_get_contents ("../../include/stat.txt")); ?></h2></center>
+<br />
+</div>
+</div>
+</div>
+<br>
+<form id="record-form" action="post.php" method="post">
+﻿<div id="content">
+
+<div id="mainBody"><h2>Оставить запись:</h2>
+<span style="FONT-SIZE: 10px; FLOAT: right" id="count">Количество символов: 0/25000&nbsp;&nbsp;&nbsp;</span>
+<div align="center"><br>
+<textarea id="mainText" onkeyup="javascript:countLength()" rows="10" cols="20" name="Recordtext">
+</textarea>
+</div><!--<b>CUSTOM KEY: </b><input type="text" name="key">;-->
+</span>&nbsp
+
+
+<hr>
+<div align="center">
+<input class="clean-gray" type="submit" value="Сохранить запись" /><!--      <input name="create" value="Создать" class="clean-gray" type="submit">-->
+</div>
+</div>
+</div>
+</form>

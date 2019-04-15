@@ -1,0 +1,52 @@
+﻿ <?php  include ("include/protect/iinclude.php"); ?>
+ <?php  include ("include/log/xwrite.php"); ?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.0 Transitional//EN">
+<html>
+<style>
+   body {
+    background: url(index_files/back.jpg);
+   }
+  </style>
+ 
+<head>
+  <meta http-equiv="content-type" content="text/html; charset=UTF-8;charset=utf-8">
+  <title><?php  echo ucfirst($_SERVER['HTTP_HOST']);?></title>
+  <script language="javascript" src="index_files/jquery00.js"></script>
+  <script language="javascript" src="index_files/change.js"></script>
+  <script language="javascript" src="index_files/spoiler.js"></script>
+ <style type="text/css">
+   .splCont {display:none; padding:5px 15px;  border:2px solid #FF3300;}
+</style>
+  <link rel="stylesheet" type="text/css" href="index_files/style000.css">
+  <link rel="icon" type="image/x-icon" href="index_files/favicon0.ico">
+  <link rel="shortcut icon" type="image/x-icon" href="index_files/favicon0.ico">
+
+</head>
+
+
+<br>
+
+<div class="container">
+
+<div id="content">
+ <?php  include ("include/page/head.txt"); ?>
+  <a class="headref" href=""><center><img
+        src="index_files/pst_logo.png"
+        align="absBottom" border="0"></center></a>
+
+
+
+
+<center><h2><?php  echo (file_get_contents ("include/stat.txt")); ?></h2></center><div align="right"><a href="logout"><button type="button">Logout</button></a></div>
+<b><h2><center>Functions:</center></h2></b> &nbsp;&nbsp;<a href="create" target="_blank"><input class="clean-gray" value="CREATE" /></a></a>&nbsp;&nbsp;<a href="image" target="_blank"><input class="clean-gray"  value="IMAGE" /></a></a>&nbsp;&nbsp;<a href="uvd" target="_blank"><input class="clean-gray"  value="VIDEO" /></a><br>
+
+<br><br>
+
+<center><i>One sure mark of a fool is to dismiss anything that falls outside his experience as being impossible</i></center> 
+<center><h3><b><?php $ipus = $_SERVER['REMOTE_ADDR']; echo ("Your IP: $ipus");?></b></h3></center>
+</div>
+
+</div>
+</body>
+</html>
+

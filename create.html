@@ -1,0 +1,150 @@
+﻿ <?php  include ("include/protect/uinclude.php"); ?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.0 Transitional//EN">
+<html>
+<style>
+   body {
+    background: url(index_files/back.jpg);
+   }
+  </style>
+<head>
+  <meta http-equiv="content-type" content="text/html; charset=UTF-8;charset=utf-8">
+  <title>Текстовый хостинг - Новая запись</title>
+  <script language="javascript" src="index_files/scrypt00.js"></script>
+  <script language="javascript" src="index_files/jquery00.js"></script>
+  <script language="javascript" src="index_files/highligh.js"></script>
+  <script language="javascript" src="index_files/social00.js"></script>
+  <script language="javascript" src="index_files/bb.js"></script>
+  <link rel="stylesheet" type="text/css" href="index_files/style000.css">
+  <link rel="stylesheet" type="text/css" href="index_files/social00.css">
+  <link rel="icon" type="image/x-icon" href="index_files/favicon0.ico">
+  <link rel="shortcut icon" type="image/x-icon" href="index_files/favicon0.ico">
+  <script type="text/javascript" src="/js/jquery.min.js"></script>
+<script type="text/javascript">
+    $(document).ready(function(){
+    $('.splLink').click(function(){
+        $(this).parent().children('div.splCont').toggle('normal');
+        return false;
+    });
+});
+</script>
+
+<style type="text/css">
+   .splCont {display:none; padding:5px 15px;  border:2px solid #FF3300;}
+</style>
+</head>
+
+<body onload="javascript:bodyLoad()">
+<br>
+
+<div class="container">
+<div id="content">
+ <?php  include ("include/page/head.txt"); ?>
+  <a class="headref" href=""><center><img
+        src="index_files/pst_logo.png"
+        align="absBottom" border="0"></center></a>
+
+<!--  <div id="header">-->
+<!---->
+<!--  </div>-->
+  <br>
+
+<!--  <div align="right">-->
+<!--    <div>-->
+<!--      <form id="search-box" action="">-->
+<!--        <input name="search"> <input value="Поиск" type="submit">-->
+<!--      </form>-->
+<!--    </div>-->
+<!--  </div>-->
+
+
+            <script type="text/javascript" src="demo1_files/highslid.js"></script>
+<link rel="stylesheet" type="text/css" href="demo1_files/highslid.css" />
+<script type="text/javascript">
+hs.graphicsDir = 'demo1_files/graphics/';
+hs.outlineType = 'rounded-white';
+hs.wrapperClassName = 'draggable-header';
+</script>
+
+<script type="text/javascript">
+function openNewWindow(_this, height)
+{
+	var w = (window.innerWidth / 1000) * 40;
+	var h = ((height == 0)?((window.innerHeight / 1000) * 40):height);
+	hs.minWidth = w;
+	hs.minHeight = h;
+	hs.lang.creditsText = _this.title;
+	hs.creditsHref = "#";
+
+    var result = hs.htmlExpand(_this, { objectType: 'iframe' } );
+    return result;
+}
+</script>
+            
+  <script>
+  $(document).ready(function(){
+    $("#clickview").click(function(){
+		var content = $("#mainText").val();
+		$("#view").html(content);
+		
+	});
+  });
+  </script>
+
+  <form id="record-form" action="post.php" method="post">
+
+  <br>
+    <div class="full">
+	<center><h2><?php  echo (file_get_contents ("include/stat.txt")); ?></h2></center>
+<div align="center">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Logo&nbsp;&nbsp;&nbsp;&nbsp;<input name="head" id="title_input" placeholder="code of logo" size="40" /><a href="include/upload/upload.htm.php" onclick="return openNewWindow(this, 120)" title="Загрузить">&nbsp;&nbsp;Upload Image</a></div><br>
+<div align="center">Background&nbsp;&nbsp;&nbsp;&nbsp;<input name="background" id="title_input" placeholder="code of background" size="40" /><a href="include/upload/upload.htm.php" onclick="return openNewWindow(this, 120)" title="Загрузить">&nbsp;&nbsp;Upload Image</a></div><br>
+<div align="center"><input name="custom" id="title_input" placeholder="Custom link" size="40" /></div><br>
+      <center><input name="Recordtitle" id="title_input" placeholder="Title" size="40" />  </center><br>
+<br /><br />
+
+    </div>
+  <div align="left"><div id="mainBody"><h2>Text Field:</h2>
+Text: &nbsp;&nbsp;&nbsp;&nbsp;
+  <button type="button" onClick=bb("Recordtext","&lt;b&gt;","&lt;/b&gt;")><b>b</b></button>
+  <button type="button" onClick=bb("Recordtext","&lt;i&gt;","&lt;/i&gt;")><i>i</i></button>
+  <button type="button" onClick=bb("Recordtext","&lt;u&gt;","&lt;/u&gt;")><u>u</u></button>
+  <button type="button" onClick=bb("Recordtext","&lt;s&gt;","&lt;/s&gt;")><s>s</s></button><br>
+  Size:&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+  <button type="button" onClick=bb("Recordtext","&lt;h1&gt;","&lt;/h1&gt;")>h1</button>
+  <button type="button" onClick=bb("Recordtext","&lt;h2&gt;","&lt;/h2&gt;")>h2</button>
+  <button type="button" onClick=bb("Recordtext","&lt;h3&gt;","&lt;/h3&gt;")>h3</button>
+  <button type="button" onClick=bb("Recordtext","&lt;h4&gt;","&lt;/h4&gt;")>h4</button>
+  <button type="button" onClick=bb("Recordtext","&lt;h5&gt;","&lt;/h5&gt;")>h5</button>
+  <button type="button" onClick=bb("Recordtext","&lt;h6&gt;","&lt;/h6&gt;")>h6</button><br>
+  Position: 
+  <button type="button" onClick=bb("Recordtext","&lt;center&gt;","&lt;/center&gt;");>center</button>
+  <button type="button" onClick=bb("Recordtext","[right]","[/right]")>right</button><br>
+  Media:&nbsp;&nbsp;
+  <button type="button" onClick=bb("Recordtext","[url=|","[/url]")>link</button>
+  <button type="button" onClick=bb("Recordtext","[audio]","[/audio]")>audio</button>
+  <button type="button" onClick=bb("Recordtext","[video]","[/video]")>video</button>
+  <button type="button" onClick=bb("Recordtext","[youtube]","[/youtube]")>youtube</button>
+  <button type="button" onClick=bb("Recordtext","[img]","[/img]")>img</button>
+  <button type="button" onClick=bb("Recordtext","[imgu]","[/imgu]")>img uploaded</button>
+  <a href="include/upload/upload.htm.php" onclick="return openNewWindow(this, 120)" title="Загрузить">&nbsp;&nbsp;Upload Image</a><br>
+  </div> </div>
+  
+  <span
+      style="FONT-SIZE: 10px; FLOAT: right" id="count">Количество символов: 0/25000&nbsp;&nbsp;&nbsp;</span>
+
+    <div align="center"><br>
+<!--      <textarea name="Record[text]" rows="10" cols="20" id="mainText" onkeyup="javascript:countLength()"></textarea>&nbsp;&nbsp;-->
+  <textarea id="mainText" onkeyup="javascript:countLength()" rows="10" cols="20" name="Recordtext"></textarea>            </span>&nbsp;<br>
+
+    </div>
+
+    <hr>
+    <div align="center">
+      <input class="clean-gray" type="submit" value="Create" /><!--      <input name="create" value="Создать" class="clean-gray" type="submit">-->
+	   <button class="clean-gray" type="button" id="clickview">Preview</button>
+	   <fieldset id="view"></fieldset>
+    </div>
+  </div>
+ </div>
+</body>
+</html>
+

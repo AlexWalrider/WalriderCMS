@@ -1,0 +1,293 @@
+﻿ <? include ("../protect/vainclude.php"); ?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.0 Transitional//EN">
+<html>
+<style>
+   body {
+    background: url(../../index_files/back.jpg);
+   }
+  </style>
+ 
+<head>
+  <meta http-equiv="content-type" content="text/html; charset=UTF-8;charset=utf-8">
+  <title>Текстовый хостинг - Просмотр страниц</title>
+  <script language="javascript" src="../../index_files/scrypt00.js"></script>
+  <script language="javascript" src="../../index_files/jquery00.js"></script>
+  <script language="javascript" src="../../index_files/highligh.js"></script>
+  <script language="javascript" src="../../index_files/social00.js"></script>
+  <script language="javascript" src="../../index_files/imgdisplay.js"></script>
+  <link rel="stylesheet" type="text/css" href="../../index_files/style000.css">
+  <link rel="stylesheet" type="text/css" href="../../index_files/social00.css">
+  <link rel="icon" type="image/x-icon" href="../../index_files/favicon0.ico">
+  <link rel="shortcut icon" type="image/x-icon" href="../../index_files/favicon0.ico">
+
+</head>
+
+<body onload="javascript:bodyLoad()">
+<br>
+
+<div class="container">
+<div id="content">
+<? include ("../page/headwa.txt"); ?>
+  <a class="headref" href=""><center><img
+        src="../../index_files/pst_logo.png"
+        align="absBottom" border="0"></center></a>
+
+
+  <br>
+
+
+
+<?
+
+$host = $_SERVER['HTTP_HOST'];
+setlocale(LC_TIME, "ru_RU.utf8");
+date_default_timezone_set('Europe/Moscow');
+$startdir = '../../img/';
+$showthumbnails = false; 
+$showdirs = true;
+$forcedownloads = false;
+$hide = array(
+				'dlf',
+				'public_html',				
+				'index.php',
+				'Thumbs',
+				'index.html',
+				'write.php',
+				'view.php',
+				'.htaccess',
+				'showpages.html',
+				'.htpasswd',
+				'post.php'
+			);
+$displayindex = false;
+$allowuploads = false;
+$overwrite = false;
+
+$indexfiles = array (
+				'index.html',
+				'index.htm',
+				'default.htm',
+				'default.html'
+			);
+			
+$filetypes = array (
+				'png' => 'jpg.gif',
+				'jpeg' => 'jpg.gif',
+				'bmp' => 'jpg.gif',
+				'jpg' => 'jpg.gif', 
+				'gif' => 'gif.gif',
+				'zip' => 'archive.png',
+				'rar' => 'archive.png',
+				'exe' => 'exe.gif',
+				'setup' => 'setup.gif',
+				'txt' => 'text.png',
+				'htm' => 'html.gif',
+				'html' => 'html.gif',
+				'php' => 'php.gif',				
+				'fla' => 'fla.gif',
+				'swf' => 'swf.gif',
+				'xls' => 'xls.gif',
+				'doc' => 'doc.gif',
+				'sig' => 'sig.gif',
+				'fh10' => 'fh10.gif',
+				'pdf' => 'pdf.gif',
+				'psd' => 'psd.gif',
+				'rm' => 'real.gif',
+				'mpg' => 'video.gif',
+				'mpeg' => 'video.gif',
+				'mov' => 'video2.gif',
+				'avi' => 'video.gif',
+				'eps' => 'eps.gif',
+				'gz' => 'archive.png',
+				'asc' => 'sig.gif',
+			);
+			
+error_reporting(0);
+if(!function_exists('imagecreatetruecolor')) $showthumbnails = false;
+$leadon = $startdir;
+if($leadon=='.') $leadon = '';
+if((substr($leadon, -1, 1)!='/') && $leadon!='') $leadon = $leadon . '/';
+$startdir = $leadon;
+
+if($_GET['dir']) {
+	// check this is okay.
+	
+	if(substr($_GET['dir'], -1, 1)!='/') {
+		$_GET['dir'] = $_GET['dir'] . '/';
+	}
+	
+	$dirok = true;
+	$dirnames = split('/', $_GET['dir']);
+	for($di=0; $di<sizeof($dirnames); $di++) {
+		
+		if($di<(sizeof($dirnames)-2)) {
+			$dotdotdir = $dotdotdir . $dirnames[$di] . '/';
+		}
+		
+		if($dirnames[$di] == '..') {
+			$dirok = false;
+		}
+	}
+	
+	if(substr($_GET['dir'], 0, 1)=='/') {
+		$dirok = false;
+	}
+	
+	if($dirok) {
+		 $leadon = $leadon . $_GET['dir'];
+	}
+}
+
+
+
+$opendir = $leadon;
+if(!$leadon) $opendir = '.';
+if(!file_exists($opendir)) {
+	$opendir = '.';
+	$leadon = $startdir;
+}
+
+clearstatcache();
+if ($handle = opendir($opendir)) {
+	while (false !== ($file = readdir($handle))) { 
+		// first see if this file is required in the listing
+		if ($file == "." || $file == "..")  continue;
+		$discard = false;
+		for($hi=0;$hi<sizeof($hide);$hi++) {
+			if(strpos($file, $hide[$hi])!==false) {
+				$discard = true;
+			}
+		}
+		
+		if($discard) continue;
+		if (@filetype($leadon.$file) == "dir") {
+			if(!$showdirs) continue;
+		
+			$n++;
+			if($_GET['sort']=="date") {
+				$key = @filemtime($leadon.$file) . ".$n";
+			}
+			else {
+				$key = $n;
+			}
+			$dirs[$key] = $file . "/";
+		}
+		else {
+			$n++;
+			if($_GET['sort']=="date") {
+				$key = @filemtime($leadon.$file) . ".$n";
+			}
+			elseif($_GET['sort']=="size") {
+				$key = @filesize($leadon.$file) . ".$n";
+			}
+			else {
+				$key = $n;
+			}
+			$files[$key] = $file;
+			
+			if($displayindex) {
+				if(in_array(strtolower($file), $indexfiles)) {
+					header("Location: $file");
+					die();
+				}
+			}
+		}
+	}
+	closedir($handle); 
+}
+
+// sort our files
+if($_GET['sort']=="date") {
+	@ksort($dirs, SORT_NUMERIC);
+	@ksort($files, SORT_NUMERIC);
+}
+elseif($_GET['sort']=="size") {
+	@natcasesort($dirs); 
+	@ksort($files, SORT_NUMERIC);
+}
+else {
+	@natcasesort($dirs); 
+	@natcasesort($files);
+}
+
+// order correctly
+if($_GET['order']=="desc" && $_GET['sort']!="size") {$dirs = @array_reverse($dirs);}
+if($_GET['order']=="desc") {$files = @array_reverse($files);}
+$dirs = @array_values($dirs); $files = @array_values($files);
+
+?>
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+<html>
+    <head>
+        
+       
+                    <div id="files">
+                        <div class="top"></div>
+                        <div class="cont">
+
+                            <div id="listingcontainer">
+                                <div id="listing">
+                                <?
+                                $class = 'b';
+                                if($dirok) {
+                                ?>
+                                 
+                                <?
+                                    if($class=='b') $class='w';
+                                    else $class = 'b';
+                                }
+                                $arsize = sizeof($dirs);
+                                for($i=0;$i<$arsize;$i++) {
+                                ?>
+                               
+                                <?
+                                    if($class=='b') $class='w';
+                                    else $class = 'b';	
+                                }
+                                
+                                $arsize = sizeof($files);
+                                for($i=0;$i<$arsize;$i++) {
+                                   
+                                    $ext = strtolower(substr($files[$i], strrpos($files[$i], '.')+1));
+                                    $supportedimages = array('gif', 'png', 'jpeg', 'jpg');
+                                    $thumb = '';
+                                            
+                                    if($filetypes[$ext]) {
+                                        $icon = $filetypes[$ext];
+                                    }
+                                    
+                                    $filename = $files[$i];
+                                    if(strlen($filename)>43) {
+                                        $filename = substr($files[$i], 0, 40) . '...';
+                                    }
+                                    
+                                    $fileurl = $leadon . $files[$i];
+                                ?>
+					<center>
+			<br>		
+			<?PHP $nox = str_replace (".jpg", "", $filename);?>
+<a target="_blank" href="http://<?echo $host; ?>/img/full/<?=$filename;?>"><?=$filename;?></a>  <span class="backlight" style="cursor: pointer;vertical-align:bottom" onclick="load_image_html(this,this.parentNode,0);">http://<?echo $host; ?>/img/<?=$filename;?></span>
+                                  </a><em>&nbsp;&nbsp;<?=round(filesize($leadon.$files[$i])/1024);?> KB</em>  <a target="_blank" href="http://<?echo $host; ?>/z<?=$nox;?>"><?=$filename;?></a></center>
+                                <?
+                                    if($class=='b') $class='w';
+                                    else $class = 'b';	
+                                }	
+                                ?>
+                                </div>
+                            </div>
+
+                        </div>
+            
+       
+    </body>
+</html>
+
+
+</div><!-- content -->
+
+</div>
+
+
+</body>
+</html>
+

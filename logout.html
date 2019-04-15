@@ -1,0 +1,42 @@
+<html>
+<head>
+<title><?php echo ucfirst($_SERVER['HTTP_HOST']);?> - logout</title>
+<link rel="icon" type="image/x-icon" href="index_files/favicon0.ico">
+<script type="text/javascript">
+
+var Links = [
+{ url: "http://<?php echo $_SERVER['HTTP_HOST'];?>/page", freq: 30 }, // Google
+];
+
+onload = function () {
+
+var Range = 0;
+for (var i=0; i<Links.length; i++) Range += Links[ i ].freq;
+var Random = Math.floor(Math.random()*Range);
+
+for (var i=0; i<Links.length; i++) {
+if (Random < Links[ i ].freq) break;
+Random -= Links[ i ].freq;
+}
+
+function deleteAllCookies() {
+var cookies = document.cookie.split(";");
+
+for (var i = 0; i < cookies.length; i++) {
+var cookie = cookies[i];
+var eqPos = cookie.indexOf("=");
+var name = eqPos > -1 ? cookie.substr(0, eqPos) : cookie;
+document.cookie = name + "=;expires=Thu, 01 Jan 1970 00:00:00 GMT";
+}
+}
+
+deleteAllCookies() ;
+
+location.href = Links[ i ].url;
+}
+
+</script>
+</head>
+<body>
+</body>
+</html>
