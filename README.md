@@ -38,6 +38,6 @@ No need to setup smth
 - you can change status (displaying on all the pages)
 
 # Contact
-E-mail: alex@walrider.ru<br>
+E-mail: alex@awmail.biz<br>
 This project is a personal development, please respect its philosophy and don't use it for evil purposes!<br>
 WalriderCMS is under GNU GPL v3. 
